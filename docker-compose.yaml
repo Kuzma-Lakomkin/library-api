@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  database:
+    container_name: library_api
+    image: postgres:16-alpine
+    env_file:
+      - .env.local
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
